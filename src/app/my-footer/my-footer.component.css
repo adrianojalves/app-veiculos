@@ -1,0 +1,17 @@
+.page-footer{
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    background-color: #C3AB96;
+    padding-top: 0px;
+    color: #153450;
+}
+
+.page-footer > div{
+  color: #153450;
+  font-weight: bold;
+}
+
+.footer-copyright > div > a{
+  color: #153450 !important;
+}

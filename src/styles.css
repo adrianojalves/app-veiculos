@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.min.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #F8E4CC;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 95%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.bebas-family{
+  font-family: "Bebas Neue";
+}
+
+.josefyn-family{
+  font-family: "Josefin Sans";
+}
+
+.modal{
+  background-color: #F8E4CC;
+  font-family: "Josefin Sans";
+  color: #153450 !important;
+  border-radius: 15px;
+}
+
+.modal .modal-footer{
+  background-color: #C3AB96;
+  font-family: "Josefin Sans";
+  color: #153450 !important;
+  font-weight: bold;
+}
+
+.modal .modal-footer > a{
+  font-family: "Josefin Sans";
+  color: #153450 !important;
+  font-weight: bold;
+  font-size: 1.2em;
+}
