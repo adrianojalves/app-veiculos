@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import * as M from "materialize-css";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-header',
@@ -7,8 +6,7 @@ import * as M from "materialize-css";
   styleUrls: ['./my-header.component.css']
 })
 export class MyHeaderComponent implements OnInit {
-  @ViewChild('modalSobre') modalElement?: ElementRef;
-  modal: any;
+  abrirModal: boolean = false;
 
   constructor() {
   }
@@ -16,11 +14,21 @@ export class MyHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(): void{
-    this.modal = M.Modal.init(this.modalElement?.nativeElement);
+  abrirSobre(){
+    this.abrirModal = true;
   }
 
-  abrirSobre(){
-    this.modal.open();
+  aoFecharModal(valor: boolean){
+    this.abrirModal = valor;
+  }
+
+  get tituloSobreMsgModal(){
+    return "Sobre o APP-Veículos";
+  }
+
+  get msgSobreMsgModal(){
+    return "APP desenvolvido como avaliação da disciplina Frameworks da Pós-JAVA UTFPR "+
+    " | Aluno: Adriano de Jesus Alves - "+
+    "adrianojesusalves@alunos.utfpr.edu.br";
   }
 }

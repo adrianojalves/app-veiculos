@@ -15,11 +15,11 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: #F8E4CC;
+  font-family: "Josefin Sans";
 }
 
 main {
   flex: 1 0 auto;
-  width: 95%;
   margin: auto;
   margin-top: 5px;
 }
@@ -51,4 +51,67 @@ main {
   color: #153450 !important;
   font-weight: bold;
   font-size: 1.2em;
+}
+
+.barra-menu{
+  width: 100%;
+  min-height: 45px;
+  background-color: #B8A28E;
+  margin-top: 5px;
+  vertical-align: middle;
+  padding-top: 4px;
+  margin-bottom: 15px;
+}
+
+.menu-esquerda{
+  float: left;
+  margin-left: 5px;
+}
+.menu-direita{
+  float: right;
+  margin-right: 5px;
+}
+
+.button-menu{
+  background-color: #294052;
+  color: #C3AB96;
+}
+
+.button-menu:hover{
+  background-color: #447294;
+  font-weight: bold;
+}
+
+.button-table{
+  background-color: #294052;
+  color: #C3AB96;
+}
+
+.button-table:hover{
+  background-color: #447294;
+  font-weight: bold;
+}
+
+thead{
+  background-color: #B8A28E;
+}
+tr{
+  border-bottom: 1px solid #B8A28E !important;
+}
+
+table.highlight>tbody>tr:hover{
+  background-color: #F5F5F5;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+  border-bottom: 1px solid #B8A28E;
+  box-shadow: 0 1px 0 0 #B8A28E;
+}
+input[type=text]:not(.browser-default):focus:not([readonly])+label{
+  color: #B8A28E;
+}
+
+.input-field>label{
+  transform: translateY(-14px) scale(0.8);
+  transform-origin: 0 0;
 }

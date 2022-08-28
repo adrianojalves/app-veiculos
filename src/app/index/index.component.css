@@ -1,0 +1,30 @@
+.container{
+  margin-top: 12%;
+}
+
+.btn-menu{
+  width: 100px;
+  height: 80px;
+  background-color: #C3AB96 !important;
+  background-position-x: center;
+  background-repeat: no-repeat;
+
+  color: #153450;
+  padding-top: 55px;
+}
+
+.btn-menu:active{
+  color: #447294;
+}
+
+.btn-veiculos{
+  background-image: url("/assets/images/car-button-64.png");
+}
+
+.btn-dados{
+  background-image: url("/assets/images/manutencao-button-64.png");
+}
+
+.btn-estatistica{
+  background-image: url("/assets/images/estatistica-button-64.png");
+}
