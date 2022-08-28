@@ -1,0 +1,32 @@
+<div class="barra-menu">
+  <div class="menu-esquerda">
+    <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="salvar()"><i class="material-icons left">save</i>Salvar</a>
+  </div>
+  <div class="menu-direita">
+    <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="voltar()"><i class="material-icons left">keyboard_return</i>Voltar</a>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Cadastro do Veículo</h4>
+
+  <div class="row">
+    <form class="col s12">
+
+      <div class="row">
+        <div class="input-field col s2">
+          <input [(ngModel)]="this.veiculo.id" id="id" type="text" name="id" disabled="disabled" >
+          <label for="id">Código</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s8">
+          <input [(ngModel)]="this.veiculo.nome" id="nome" type="text" name="nome" >
+          <label for="nome">Nome</label>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>

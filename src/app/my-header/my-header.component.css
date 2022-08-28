@@ -1,0 +1,17 @@
+.nav-wrapper > a{
+  margin-left:5px;
+  color: #153450 !important;
+  cursor: pointer;
+}
+
+nav{
+  background-color: #C3AB96;
+}
+
+.footer-copyright > div > a{
+  color: #153450 !important;
+}
+
+img{
+  cursor: pointer;
+}

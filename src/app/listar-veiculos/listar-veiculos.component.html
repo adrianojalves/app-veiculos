@@ -1,0 +1,33 @@
+<div class="barra-menu">
+  <div class="menu-esquerda">
+    <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="novo()"><i class="material-icons left">add_box</i>Novo</a>
+  </div>
+  <div class="menu-direita">
+    <a class="waves-effect waves-light btn button-menu josefyn-family" [routerLink]="['/']"><i class="material-icons left">home</i>Home</a>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Lista de Veículos</h4>
+  <table class="striped highlight responsive-table">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>Tipo</th>
+          <th>Nome</th>
+          <th style="width: 30px">Operações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let v of this.listVeiculos">
+        <td>{{v.id}}</td>
+        <td>{{v.tipo}}</td>
+        <td>{{v.nome}}</td>
+        <td style="text-align: center">
+          <a class="waves-effect waves-light btn button-table" title="Editar" (click)="editar(v.id)" ><i class="material-icons">edit</i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
