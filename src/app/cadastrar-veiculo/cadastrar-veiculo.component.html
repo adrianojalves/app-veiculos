@@ -1,11 +1,4 @@
-<div class="barra-menu">
-  <div class="menu-esquerda">
-    <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="salvar()"><i class="material-icons left">save</i>Salvar</a>
-  </div>
-  <div class="menu-direita">
-    <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="voltar()"><i class="material-icons left">keyboard_return</i>Voltar</a>
-  </div>
-</div>
+<app-barra-menu-cadastro (aoSalvar)="salvar($event)" (aoVoltar)="voltar($event)" ></app-barra-menu-cadastro>
 
 <div class="container">
   <h4>Cadastro do Veículo</h4>
