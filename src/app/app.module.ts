@@ -10,6 +10,8 @@ import { IndexComponent } from './index/index.component';
 import { ListarVeiculosComponent } from './listar-veiculos/listar-veiculos.component';
 import { CadastrarVeiculoComponent } from './cadastrar-veiculo/cadastrar-veiculo.component';
 import { FormsModule } from '@angular/forms';
+import { BarraMenuCadastroComponent } from './barra-menu-cadastro/barra-menu-cadastro.component';
+import { BarraMenuListaComponent } from './barra-menu-lista/barra-menu-lista.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     AppMsgModalComponent,
     IndexComponent,
     ListarVeiculosComponent,
-    CadastrarVeiculoComponent
+    CadastrarVeiculoComponent,
+    BarraMenuCadastroComponent,
+    BarraMenuListaComponent
   ],
   imports: [
     BrowserModule,

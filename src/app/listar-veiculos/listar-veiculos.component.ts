@@ -31,7 +31,7 @@ export class ListarVeiculosComponent implements OnInit {
     this.router.navigate(['/cadastrar-veiculo', id]);
   }
 
-  novo(){
+  novo(event : any){
     this.router.navigate(['/cadastrar-veiculo', 0]);
   }
 }

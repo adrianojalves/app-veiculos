@@ -25,11 +25,11 @@ export class CadastrarVeiculoComponent implements OnInit {
     this.veiculo.id = this.codigo;
   }
 
-  voltar(){
+  voltar(event: any){
     this.router.navigate(['/listar-veiculos']);
   }
 
-  salvar(){
+  salvar(event: any){
     this.router.navigate(['/listar-veiculos']);
   }
 }

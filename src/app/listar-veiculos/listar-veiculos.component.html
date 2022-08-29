@@ -1,11 +1,12 @@
-<div class="barra-menu">
+<!-- <div class="barra-menu">
   <div class="menu-esquerda">
     <a class="waves-effect waves-light btn button-menu josefyn-family" (click)="novo()"><i class="material-icons left">add_box</i>Novo</a>
   </div>
   <div class="menu-direita">
     <a class="waves-effect waves-light btn button-menu josefyn-family" [routerLink]="['/']"><i class="material-icons left">home</i>Home</a>
   </div>
-</div>
+</div> -->
+<app-barra-menu-lista (funcNovo)="novo($event)" ></app-barra-menu-lista>
 
 <div class="container">
   <h4>Lista de Veículos</h4>
