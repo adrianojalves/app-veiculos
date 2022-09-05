@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-barra-menu-cadastro',
@@ -8,6 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class BarraMenuCadastroComponent implements OnInit {
   @Output() aoSalvar = new EventEmitter<boolean>();
   @Output() aoVoltar = new EventEmitter<boolean>();
+
+  @Input() desabilitar! : boolean;
 
   constructor() { }
 
@@ -20,5 +22,9 @@ export class BarraMenuCadastroComponent implements OnInit {
 
   voltar(){
     this.aoVoltar.emit();
+  }
+
+  get desabilitarCss(){
+    return this.desabilitar?"disabled":"";
   }
 }
