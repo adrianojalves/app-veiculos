@@ -24,6 +24,13 @@ main {
   margin-top: 5px;
 }
 
+.marrom-escuro{
+  background-color: #B8A28E !important;
+}
+.azul-escuro{
+  color: #153450 !important;
+}
+
 .bebas-family{
   font-family: "Bebas Neue";
 }
@@ -105,13 +112,36 @@ table.highlight>tbody>tr:hover{
 
 input[type=text]:not(.browser-default):focus:not([readonly]){
   border-bottom: 1px solid #B8A28E;
-  box-shadow: 0 1px 0 0 #B8A28E;
+  box-shadow:
+  0 1px 0 0 #B8A28E;
+}
+input[type=number]:not(.browser-default):focus:not([readonly]){
+  border-bottom: 1px solid #B8A28E;
+  box-shadow:
+  0 1px 0 0 #B8A28E;
 }
 input[type=text]:not(.browser-default):focus:not([readonly])+label{
   color: #B8A28E;
+  font-weight: bold;
+}
+input[type=number]:not(.browser-default):focus:not([readonly])+label{
+  color: #B8A28E;
+  font-weight: bold;
 }
 
 .input-field>label{
   transform: translateY(-14px) scale(0.8);
   transform-origin: 0 0;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 2px solid #B8A28E;
+}
+
+.dropdown-content li>a, .dropdown-content li>span{
+  color: #153450 !important;
+}
+
+.card-aviso{
+  padding: 10px !important;
 }

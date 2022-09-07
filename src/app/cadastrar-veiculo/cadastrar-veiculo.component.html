@@ -1,21 +1,66 @@
-<app-barra-menu-cadastro (aoSalvar)="salvar($event)" (aoVoltar)="voltar($event)" ></app-barra-menu-cadastro>
+<app-barra-menu-cadastro (aoSalvar)="salvar($event)" [desabilitar]="!this.veiculo.validate() || !hideCardAviso" (aoVoltar)="voltar($event)" ></app-barra-menu-cadastro>
 
 <div class="container">
   <h4>Cadastro do Veículo</h4>
 
+  <div class="row" [hidden]="hideCardAviso">
+    <div class="col s12">
+      <div class="card marrom-escuro">
+        <div class="card-content azul-escuro card-aviso">
+          <span class="card-title">Veículo salvo, você será redirecionado em {{segundos}}s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" #form="ngForm">
 
       <div class="row">
+        <div class="input-field col s2">
+          <label for="tipo" class="active">Tipo*</label>
+          <select id="tipo" name="tipo" [(ngModel)]="this.veiculo.tipo" #tipo>
+            <option *ngFor="let t of TipoVeiculo | keyvalue" [ngValue]="t.key">{{ t.value }}</option>
+          </select>
+        </div>
+        <div class="input-field col s8">
+          <input [(ngModel)]="this.veiculo.nome" id="nome" type="text" required name="nome" #nome="ngModel">
+          <label for="nome">Nome*</label>
+          <div class="red-text" [hidden]="nome.valid || nome.untouched">
+            Digite o nome do veículo
+          </div>
+        </div>
         <div class="input-field col s2">
           <input [(ngModel)]="this.veiculo.id" id="id" type="text" name="id" disabled="disabled" >
           <label for="id">Código</label>
         </div>
       </div>
+
       <div class="row">
-        <div class="input-field col s8">
-          <input [(ngModel)]="this.veiculo.nome" id="nome" type="text" name="nome" >
-          <label for="nome">Nome</label>
+        <div class="input-field col s4">
+          <input [(ngModel)]="this.veiculo.kmAtual" #kmAtual="ngModel" maxlength="6" id="kmAtual" type="number" name="kmAtual" required
+          pattern="^\d[0-999999]{0,6}$" >
+          <label for="kmAtual">KM Atual*</label>
+          <div class="red-text" [hidden]="kmAtual.valid || kmAtual.untouched">
+            km atual inválida
+          </div>
+        </div>
+        <div class="input-field col s4">
+          <label for="cor" class="active">Cor*</label>
+          <select id="cor" name="cor" [(ngModel)]="this.veiculo.cor" required #corModel="ngModel" #cor>
+            <option [ngValue]="{}" disabled>Selecione uma cor</option>
+            <option *ngFor="let c of CORES" [ngValue]="c">{{ c }}</option>
+          </select>
+          <div class="red-text" [hidden]="corModel.valid || corModel.untouched">
+            Selecione a cor
+          </div>
+        </div>
+        <div class="input-field col s4">
+          <label for="status" class="active">Status*</label>
+          <select id="status" name="status" [(ngModel)]="this.veiculo.status" #status>
+            <option [ngValue]="true">Ativo</option>
+            <option [ngValue]="false">Inativo</option>
+          </select>
         </div>
       </div>
 
