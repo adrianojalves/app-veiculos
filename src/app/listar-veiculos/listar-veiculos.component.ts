@@ -1,6 +1,8 @@
+import { KEY_VEICULO } from './../utils/memory-cache-util';
 import { TipoVeiculo, Veiculo } from './../models/Veiculos';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MemoreCacheUtil } from '../utils/memory-cache-util';
 
 @Component({
   selector: 'app-listar-veiculos',
@@ -9,23 +11,23 @@ import { Router } from '@angular/router';
 })
 export class ListarVeiculosComponent implements OnInit {
   listVeiculos: Veiculo[] = [];
+
+  hideCardAviso = true;
+  segundos! : number;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    let v1 = new Veiculo();
-    v1.id=1;
-    v1.nome="Cívic";
-    v1.tipo = TipoVeiculo.Carro;
-
-    let v2 = new Veiculo();
-    v2.id=2;
-    v2.nome="Fazer";
-    v2.tipo = TipoVeiculo.Moto;
-
-    this.listVeiculos.push(v1);
-    this.listVeiculos.push(v2);
+    this.listVeiculos = MemoreCacheUtil.getList(KEY_VEICULO);
   }
 
+  excluir(id: number){
+    this.listVeiculos = MemoreCacheUtil.deletar(KEY_VEICULO, id);
+    this.segundos = 3;
+    this.hideCardAviso=false;
+
+    this.showMessage();
+  }
 
   editar(id: number){
     this.router.navigate(['/cadastrar-veiculo', id]);
@@ -33,5 +35,19 @@ export class ListarVeiculosComponent implements OnInit {
 
   novo(event : any){
     this.router.navigate(['/cadastrar-veiculo', 0]);
+  }
+
+  showMessage(){
+    if(this.segundos==0){
+      this.hideCardAviso=true;
+      return;
+    }
+    else{
+      setTimeout(()=>{
+         this.segundos--;
+
+         this.showMessage();
+      },1000)
+    }
   }
 }

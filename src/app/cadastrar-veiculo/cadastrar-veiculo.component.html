@@ -1,7 +1,17 @@
-<app-barra-menu-cadastro (aoSalvar)="salvar($event)" [desabilitar]="!this.veiculo.validate()" (aoVoltar)="voltar($event)" ></app-barra-menu-cadastro>
+<app-barra-menu-cadastro (aoSalvar)="salvar($event)" [desabilitar]="!this.veiculo.validate() || !hideCardAviso" (aoVoltar)="voltar($event)" ></app-barra-menu-cadastro>
 
 <div class="container">
   <h4>Cadastro do Veículo</h4>
+
+  <div class="row" [hidden]="hideCardAviso">
+    <div class="col s12">
+      <div class="card marrom-escuro">
+        <div class="card-content azul-escuro card-aviso">
+          <span class="card-title">Veículo salvo, você será redirecionado em {{segundos}}s</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <form class="col s12" #form="ngForm">
@@ -28,7 +38,7 @@
 
       <div class="row">
         <div class="input-field col s4">
-          <input [(ngModel)]="this.veiculo.kmAtual" #kmAtual="ngModel" maxlength="6" id="kmAtual" type="text" name="kmAtual" required
+          <input [(ngModel)]="this.veiculo.kmAtual" #kmAtual="ngModel" maxlength="6" id="kmAtual" type="number" name="kmAtual" required
           pattern="^\d[0-999999]{0,6}$" >
           <label for="kmAtual">KM Atual*</label>
           <div class="red-text" [hidden]="kmAtual.valid || kmAtual.untouched">

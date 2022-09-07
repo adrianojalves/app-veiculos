@@ -26,6 +26,18 @@ export class Veiculo{
       return true;
     }
   }
+
+  static converter(veiculo: Veiculo){
+    let novoVeiculo = new Veiculo();
+    novoVeiculo.id = veiculo.id;
+    novoVeiculo.tipo = veiculo.tipo;
+    novoVeiculo.nome = veiculo.nome;
+    novoVeiculo.kmAtual = veiculo.kmAtual;
+    novoVeiculo.cor = veiculo.cor;
+    novoVeiculo.status = veiculo.status;
+
+    return novoVeiculo;
+  }
 }
 
 export enum TipoVeiculo{
