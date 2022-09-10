@@ -73,7 +73,7 @@ export class MemoreCacheUtil{
     return novoArray;
   }
 
-  private static saveList(key: string, object: any){
+  public static saveList(key: string, object: any){
     this.initialize();
 
     StorageUtil.saveList(key, object);

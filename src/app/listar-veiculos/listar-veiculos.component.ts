@@ -1,8 +1,7 @@
-import { KEY_VEICULO } from './../utils/memory-cache-util';
-import { TipoVeiculo, Veiculo } from './../models/Veiculos';
+import { VeiculosCrudServiceService } from './../servicos/veiculos-crud-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MemoreCacheUtil } from '../utils/memory-cache-util';
+import { Veiculo } from '../models/Veiculos';
 
 @Component({
   selector: 'app-listar-veiculos',
@@ -15,18 +14,25 @@ export class ListarVeiculosComponent implements OnInit {
   hideCardAviso = true;
   segundos! : number;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private veiculoCurdService : VeiculosCrudServiceService
+    ) { }
 
   ngOnInit(): void {
-    this.listVeiculos = MemoreCacheUtil.getList(KEY_VEICULO);
+    this.buscarVeiculos();
   }
 
   excluir(id: number){
-    this.listVeiculos = MemoreCacheUtil.deletar(KEY_VEICULO, id);
-    this.segundos = 3;
-    this.hideCardAviso=false;
+    this.veiculoCurdService.delete(id)
+        .then(() => {
+            this.segundos = 3;
+            this.hideCardAviso=false;
 
-    this.showMessage();
+            this.showMessage();
+        })
+        .catch((error) =>{
+          alert(error);
+        })
   }
 
   editar(id: number){
@@ -37,9 +43,20 @@ export class ListarVeiculosComponent implements OnInit {
     this.router.navigate(['/cadastrar-veiculo', 0]);
   }
 
+  buscarVeiculos(){
+    this.veiculoCurdService.getAll()
+            .then((veiculos: Veiculo[]) => {
+              this.listVeiculos = veiculos;
+            } )
+            .catch((error) => {
+              alert(error);
+            })
+  }
+
   showMessage(){
     if(this.segundos==0){
       this.hideCardAviso=true;
+      this.buscarVeiculos();
       return;
     }
     else{
@@ -49,5 +66,9 @@ export class ListarVeiculosComponent implements OnInit {
          this.showMessage();
       },1000)
     }
+  }
+
+  get desabilitarCss(){
+    return !this.hideCardAviso?"disabled":"";
   }
 }

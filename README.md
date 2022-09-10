@@ -26,9 +26,9 @@ https://www.figma.com/file/v81ruydCVZ7ePTwzJH9xu9/app-veiculo?node-id=0%3A1
 - [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 - [x] Validar campos do formulário com REGEX e apresentar os erros.
 - [x] Desabilitar o botão de submit enquanto o formulário está inválido.
-- [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [ ] Cadastrar uma entidade usando uma API (JSON Server ou Firebase).
+- [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
+- [x] Cadastrar uma entidade usando uma API (JSON Server ou Firebase).
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
-- [ ] Usar a diretiva ngIf
+- [x] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.

@@ -1,0 +1,20 @@
+{
+  "veiculos": [
+    {
+      "id": 1,
+      "nome": "Cívic",
+      "tipo": "Carro",
+      "kmAtual": 145123,
+      "cor": "Bege",
+      "status": true
+    },
+    {
+      "status": true,
+      "tipo": "Moto",
+      "nome": "Fazer 250",
+      "id": 2,
+      "kmAtual": 33200,
+      "cor": "Azul"
+    }
+  ]
+}

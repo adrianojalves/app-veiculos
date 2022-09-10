@@ -1,10 +1,9 @@
-import { KEY_VEICULO } from './../utils/memory-cache-util';
+import { VeiculosCrudServiceService } from './../servicos/veiculos-crud-service.service';
 import { Veiculo, TipoVeiculo } from './../models/Veiculos';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CORES } from '../models/ModelsUtils';
 import * as M from "materialize-css";
-import { MemoreCacheUtil } from '../utils/memory-cache-util';
 
 @Component({
   selector: 'app-cadastrar-veiculo',
@@ -25,13 +24,24 @@ export class CadastrarVeiculoComponent implements OnInit {
   TipoVeiculo = TipoVeiculo;
 
   constructor(private router: Router,
-              private activeRouter: ActivatedRoute) { }
+              private activeRouter: ActivatedRoute,
+              private veiculoCrudService : VeiculosCrudServiceService
+            ) {
+              this.veiculo = new Veiculo();
+            }
 
   ngOnInit(): void {
     this.codigo = this.activeRouter.snapshot.params['id'];
 
-    if(this.codigo){
-      this.veiculo = Veiculo.converter(MemoreCacheUtil.getItem(KEY_VEICULO, this.codigo, new Veiculo()));
+    if(this.codigo && this.codigo>0){
+      this.veiculoCrudService.getById(this.codigo)
+                             .then((veiculoSave: Veiculo)=>{
+                                this.veiculo = Veiculo.converter(veiculoSave);
+                             })
+                             .catch(()=>{
+                                alert("Erro ao buscar o veículo");
+                                this.veiculo = new Veiculo();
+                             });
     }
     else
       this.veiculo = new Veiculo();
@@ -52,8 +62,27 @@ export class CadastrarVeiculoComponent implements OnInit {
   }
 
   salvar(event: any){
-    MemoreCacheUtil.save(KEY_VEICULO, this.veiculo.id, this.veiculo);
+    if(!this.veiculo.id || this.veiculo.id<1){
+      this.veiculoCrudService.save(this.veiculo)
+                           .then(()=>{
+                            this.iniciaRedirecionar();
+                           })
+                           .catch(()=>{
+                            alert("Erro ao cadastrar o veículo");
+                           })
+    }
+    else{
+      this.veiculoCrudService.update(this.veiculo)
+                           .then(()=>{
+                            this.iniciaRedirecionar();
+                           })
+                           .catch(()=>{
+                            alert("Erro ao cadastrar o veículo");
+                           })
+    }
+  }
 
+  private iniciaRedirecionar(){
     this.segundos = 3;
 
     this.hideCardAviso=false;
@@ -72,6 +101,14 @@ export class CadastrarVeiculoComponent implements OnInit {
          this.redirecionar();
       },1000)
     }
+  }
+
+  get add(){
+    return !this.codigo || this.codigo<1;
+  }
+
+  get update(){
+    return !this.add;
   }
 
 }
