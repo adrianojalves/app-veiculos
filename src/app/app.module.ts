@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
 import { MyHeaderComponent } from './my-header/my-header.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 import { AppMsgModalComponent } from './app-msg-modal/app-msg-modal.component';
 import { IndexComponent } from './index/index.component';
 import { ListarVeiculosComponent } from './listar-veiculos/listar-veiculos.component';
@@ -29,6 +30,7 @@ import { BarraMenuListaComponent } from './barra-menu-lista/barra-menu-lista.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
