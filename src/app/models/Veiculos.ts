@@ -5,11 +5,13 @@ export class Veiculo{
   kmAtual!: number;
   cor!: string;
   status!: boolean;
+  dataAtualizacao! : Date;
 
   constructor(){
     this.status = true;
     this.tipo = TipoVeiculo.Carro;
     this.nome = "";
+    this.dataAtualizacao = new Date();
   }
 
   validate(){
@@ -35,6 +37,7 @@ export class Veiculo{
     novoVeiculo.kmAtual = veiculo.kmAtual;
     novoVeiculo.cor = veiculo.cor;
     novoVeiculo.status = veiculo.status;
+    novoVeiculo.dataAtualizacao = veiculo.dataAtualizacao;
 
     return novoVeiculo;
   }
