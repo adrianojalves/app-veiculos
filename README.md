@@ -8,6 +8,12 @@ Este projeto faz parte do requisito da disciplina Frameworks da POS-JAVA da UTFP
 
 https://github.com/adrianojalves/app-veiculos
 
+#Endereço de teste
+https://adrianojalves.github.io/app-veiculos/
+
+Para a aplicação funcionar é necessário baixar o arquivo db.json e rodar localmente
+usando o json-serve https://www.npmjs.com/package/json-server
+
 # Protótipo
 
 https://www.figma.com/file/v81ruydCVZ7ePTwzJH9xu9/app-veiculo?node-id=0%3A1
