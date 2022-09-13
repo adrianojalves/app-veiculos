@@ -1,12 +1,13 @@
 {
   "veiculos": [
     {
-      "id": 1,
-      "nome": "Cívic",
+      "status": true,
       "tipo": "Carro",
+      "nome": "Cívic",
+      "dataAtualizacao": "2022-09-10",
+      "id": 1,
       "kmAtual": 145123,
-      "cor": "Bege",
-      "status": true
+      "cor": "Bege"
     },
     {
       "status": true,
@@ -14,7 +15,8 @@
       "nome": "Fazer 250",
       "id": 2,
       "kmAtual": 33200,
-      "cor": "Azul"
+      "cor": "Azul",
+      "dataAtualizacao": "2022-08-10"
     }
   ]
 }
