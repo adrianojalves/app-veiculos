@@ -18,13 +18,13 @@
 }
 
 .btn-veiculos{
-  background-image: url("../../assets/images/car-button-64.png");
+  background-image: url("~/src/assets/images/car-button-64.png");
 }
 
 .btn-dados{
-  background-image: url("../../assets/images/manutencao-button-64.png");
+  background-image: url("~/src/assets/images/manutencao-button-64.png");
 }
 
 .btn-estatistica{
-  background-image: url("../../assets/images/estatistica-button-64.png");
+  background-image: url("~/src/assets/images/estatistica-button-64.png");
 }
