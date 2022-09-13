@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/app-veiculos/",
+    "build": "ng build --base-href=/app-veiculos/",
     "ghpages": "angular-cli-ghpages --dir=dist/app-veiculos",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
