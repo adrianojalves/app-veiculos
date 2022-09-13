@@ -31,4 +31,4 @@ https://www.figma.com/file/v81ruydCVZ7ePTwzJH9xu9/app-veiculo?node-id=0%3A1
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.

@@ -17,6 +17,15 @@
       "kmAtual": 33200,
       "cor": "Azul",
       "dataAtualizacao": "2022-08-10"
+    },
+    {
+      "status": true,
+      "tipo": "Carro",
+      "nome": "Jeep Compass",
+      "dataAtualizacao": "2022-09-13T14:18:13.436Z",
+      "kmAtual": 45000,
+      "cor": "Marron",
+      "id": 3
     }
   ]
 }
